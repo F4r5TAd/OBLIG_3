@@ -1,25 +1,22 @@
-
-name: run-tests-like-there-is-no-tomorrow
+name: run-tests-for-leap-year-class
 on:
   push:
     branches:
-        - master
+      - master
   pull_request:
     branches:
       - master
-
 jobs:
   tests:
-    name: "Run tests"
+    name: "Run Tests"
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout and setup
         uses: actions/checkout@v3
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version:  '3.11'
+          python-version: '3.11'
       - name: Install poetry
         run: pipx install poetry
       - name: Install dependencies
